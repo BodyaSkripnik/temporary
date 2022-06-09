@@ -1,5 +1,10 @@
 from django.db import models
 
+
+
+# class UserProfile(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+
 class Category(models.Model):
     name = models.CharField(max_length=100,db_index=True)
     slug = models.SlugField(max_length=100,unique=True)
