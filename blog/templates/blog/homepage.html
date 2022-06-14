@@ -19,7 +19,7 @@
     {% block title %}
         <div class="twoblock">
             {% for cat in categorys%}
-        <div class="indent"><a href="{% url 'category' cat.slug %}">{{cat}}</a></div> 
+        <div class="indent"><a href="{% url 'category' cat.category %}">{{cat.name}}</a></div> 
             {% endfor%}
         </div>
     {% endblock %}

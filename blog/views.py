@@ -15,16 +15,13 @@ import blog.mongo_utils
 
 
 def homepage(request):
-    categorys = Category.objects.all()
+    categorys = blog.mongo_utils.get_all({},'Categorys')
+    print(categorys)
     return render(request, 'blog/homepage.html',{'categorys':categorys})
-# def get_categorys(request,category_id):#принимаем category_id с urls.py
-#     products = Product.objects.filter(available = True,category = category_id)
-#     return render(request, 'blog/get_categorys.html',{'products':products})
-def get_categorys(request,category_slug):
-    products = Product.objects.filter(available=True)
-    if category_slug:
-        category = get_object_or_404(Category, slug=category_slug)
-        products = products.filter(category=category)
+    
+def get_categorys(request,category_id):
+    products = blog.mongo_utils.get_all({'category':category_id},'Product')
+    print(products)
     return render(request, 'blog/get_categorys.html',{'products':products})
 
 def basket(request,id_prod):

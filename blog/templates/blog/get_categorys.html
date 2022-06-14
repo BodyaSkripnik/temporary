@@ -3,8 +3,8 @@
     {% block title %}
         {% for prod in products %}
         <div style="display:flex ;margin-top: 10px">
-            <div>{{prod}}</div>
-            <a href="{% url 'basket' prod.id %}"><button style="margin-left: 2%;">Купить</button></a>
+            <div>{{prod.name}}</div>
+            <a href="{% url 'basket' prod.category %}"><button style="margin-left: 2%;">Купить</button></a>
         </div>
         {% endfor %}
     {% endblock %}
