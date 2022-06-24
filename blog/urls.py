@@ -10,6 +10,7 @@ urlpatterns = [
     path('category/<int:category_id>',get_categorys,name='category'),# прилетаем с homepage.html,отправляем <int:category_id> в views get_categorys
     path('basket/<int:id_prod>',basket,name='basket'),
     path('checkout/',checkout,name='checkout'),
+    path('search/',search,name='search'),
     
 
 ]

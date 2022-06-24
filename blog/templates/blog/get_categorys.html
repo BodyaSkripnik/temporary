@@ -4,6 +4,7 @@
         {% for prod in products %}
         <div style="display:flex ;margin-top: 10px">
             <div>{{prod.name}}</div>
+            <div>{{prod.price}}</div>
             <a href="{% url 'basket' prod.category %}"><button style="margin-left: 2%;">Купить</button></a>
         </div>
         {% endfor %}

@@ -1,0 +1,13 @@
+<form method="get" action="{% url 'search' %}">
+        <div>
+          <input formmethod="get" type="search" id="keyword" name="keyword" placeholder="search...">
+          <button type="submit">Search</button>
+        </div>
+      </form>
+      <div>
+        {% for i in filtered_product%}
+            <div>{{i.name}}</div>
+            <div>{{i.price}}</div>
+        {% endfor %}
+    </div>
+    
